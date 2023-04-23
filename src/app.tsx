@@ -3,7 +3,7 @@ import React from "react";
 import { SignIn, History } from "./signIn";
 
 export function App() {
-  return (
+	return (
 		<div className="mainContainer">
 			<nav className="App nav">
 				<h1>Sign In</h1>
