@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/signin-system/static/css/main.39645bf8.css",
+    "main.js": "/signin-system/static/js/main.174a61cb.js",
+    "index.html": "/signin-system/index.html",
+    "main.39645bf8.css.map": "/signin-system/static/css/main.39645bf8.css.map",
+    "main.174a61cb.js.map": "/signin-system/static/js/main.174a61cb.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39645bf8.css",
+    "static/js/main.174a61cb.js"
+  ]
+}
