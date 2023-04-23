@@ -15,7 +15,7 @@
     background-color: #aaaa;
 }
 
-.form {
+.logic {
     background-color: #bbbb;
 }
 
@@ -27,6 +27,6 @@
     background-color: #dddd;
 }
 
-.credits p {
+.credits > p {
     margin: 2px 2px;
 }

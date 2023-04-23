@@ -8,7 +8,7 @@ export function App() {
 			<nav className="App nav">
 				<h1>Sign In</h1>
 			</nav>
-			<div className="App form">
+			<div className="App logic">
 				<SignIn />
 			</div>
 			<div className="App history">
