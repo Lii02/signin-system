@@ -1,0 +1,32 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+}
+
+.App {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    padding: 15px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    flex: 1;
+}
+
+.nav {
+    background-color: #aaaa;
+}
+
+.form {
+    background-color: #bbbb;
+}
+
+.history {
+    background-color: #cccc;
+}
+
+.credits {
+    background-color: #dddd;
+}
+
+.credits p {
+    margin: 2px 2px;
+}
