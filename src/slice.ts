@@ -14,5 +14,4 @@ export const slice = createSlice({
 });
 
 export const { addSignIn } = slice.actions;
-
 export default slice.reducer;

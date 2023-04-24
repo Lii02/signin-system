@@ -11,22 +11,26 @@
     flex: 1;
 }
 
-.nav {
+.App.head {
     background-color: #aaaa;
 }
 
-.logic {
+.App.logic {
     background-color: #bbbb;
 }
 
-.history {
+.App.history {
     background-color: #cccc;
 }
 
-.credits {
+.App.credits {
     background-color: #dddd;
 }
 
-.credits > p {
+.App.credits > p {
     margin: 2px 2px;
+}
+
+.App.status {
+    background-color: #eeee;
 }
