@@ -6,6 +6,8 @@
 ### Steps(frontend)
 1. Run `npm run start`
 ### Steps(backend)
-1. cd backend
-2. `"venv/Scripts/activate.bat"` or `sh venv/Scripts/activate.sh`
-3. python main.py
+1. `cd backend`
+2. `python -m venv venv`
+3. `pip install -r requirements.txt`
+4. `"venv/Scripts/activate.bat"` or `sh venv/Scripts/activate.sh`
+5. `python main.py`
