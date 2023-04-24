@@ -34,3 +34,8 @@
 .App.status {
     background-color: #eeee;
 }
+
+.App.status button {
+    padding: 14px 25px;
+    margin: 8px 0px;
+}
