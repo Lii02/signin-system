@@ -4,7 +4,7 @@
 - Python
 - Node.js
 ### Steps(frontend)
-1. Run `npm run start`
+1. `npm run start`
 ### Steps(backend)
 1. `cd backend`
 2. `python -m venv venv`

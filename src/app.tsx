@@ -6,7 +6,7 @@ function ServerStatus() {
 	const [status, setStatus] = React.useState("");
 	
 	const checkServer = () => {
-		fetch("http://127.0.0.1:5000/").then(() => {
+		fetch("http://127.0.0.1:5000/helloworld").then(() => {
 			setStatus("Found");
 		}).catch(() => {
 			setStatus("Not Found");
