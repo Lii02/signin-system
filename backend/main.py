@@ -31,11 +31,12 @@ api.add_resource(SignIn, "/signin")
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template("dashboard.html")
+    db = Database()
+    data = db.get_signins()
+    return render_template("dashboard.html", signins=data)
 
 @atexit.register
 def cleanup():
-    # Put cleanup code here
     pass
 
 def main():

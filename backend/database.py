@@ -1,4 +1,5 @@
 import sqlite3
+from data import SignInData
 
 DB_NAME = "signin.db"
 
@@ -21,3 +22,11 @@ class Database:
         self.handle.execute(f"INSERT INTO SignIns (firstName, lastName, timestamp, additionalNotes) VALUES ('{first_name}', '{last_name}', '{timestamp}', '{additional_notes}')")
         self.handle.commit()
         print(f"Added sign in [{first_name} {last_name} | {timestamp} | {additional_notes}]")
+
+    def get_signins(self):
+        cur = self.handle.execute("SELECT * FROM SignIns")
+        tuples = cur.fetchall()
+        output = []
+        for t in tuples:
+            output.append(SignInData(t[1], t[2], t[3], t[4]))
+        return output

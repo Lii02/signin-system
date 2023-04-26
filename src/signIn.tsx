@@ -23,7 +23,7 @@ export function SignIn() {
 		const data: SignInData = {
 			first: firstName,
 			last: lastName,
-			timestamp: new Date().valueOf(),
+			timestamp: new Date().valueOf() / 1000,
 			additional: additionalInfo,
 		};
 
@@ -31,7 +31,7 @@ export function SignIn() {
 
 		let req = new XMLHttpRequest();
 		req.open("POST", "http://localhost:5000/signin");
-		req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 		let jsonData = JSON.stringify({
 			"firstName": data.first,
 			"lastName": data.last,
@@ -76,7 +76,7 @@ export function History() {
 		return (
 			<ol>
 				{log.map((data, index) => (
-					<li key={index}>Name: {data.first} {data.last} | Timestamp: {new Date(data.timestamp).toLocaleString()}</li>
+					<li key={index}>Name: {data.first} {data.last} | Timestamp: {new Date(data.timestamp * 1000).toLocaleString()}</li>
 				))}
 			</ol>
 		);
