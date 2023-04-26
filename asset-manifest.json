@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/signin-system/static/css/main.6e52132e.css",
-    "main.js": "/signin-system/static/js/main.8286dd86.js",
+    "main.js": "/signin-system/static/js/main.b28a02eb.js",
     "index.html": "/signin-system/index.html",
     "main.6e52132e.css.map": "/signin-system/static/css/main.6e52132e.css.map",
-    "main.8286dd86.js.map": "/signin-system/static/js/main.8286dd86.js.map"
+    "main.b28a02eb.js.map": "/signin-system/static/js/main.b28a02eb.js.map"
   },
   "entrypoints": [
     "static/css/main.6e52132e.css",
-    "static/js/main.8286dd86.js"
+    "static/js/main.b28a02eb.js"
   ]
 }
