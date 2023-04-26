@@ -23,11 +23,22 @@ export function SignIn() {
 		const data: SignInData = {
 			first: firstName,
 			last: lastName,
-			additional: "",
-			timestamp: new Date().valueOf()
+			timestamp: new Date().valueOf(),
+			additional: additionalInfo,
 		};
 
 		dispatch(addSignIn(data));
+
+		let req = new XMLHttpRequest();
+		req.open("POST", "http://localhost:5000/signin");
+		req.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+		let jsonData = JSON.stringify({
+			"firstName": data.first,
+			"lastName": data.last,
+			"timestamp": data.timestamp,
+			"additionalNotes": data.additional
+		});
+		req.send(jsonData);
 	};
 
 	return (

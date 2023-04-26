@@ -1,0 +1,1 @@
+CREATE TABLE SignIns (id INTEGER PRIMARY_KEY, firstName TEXT, lastName TEXT, timestamp INTEGER, additionalNotes TEXT)
