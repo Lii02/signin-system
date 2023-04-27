@@ -6,6 +6,7 @@ DB_NAME = "signin.db"
 class Database:
     def __init__(self):
         self.handle = sqlite3.connect(DB_NAME)
+        self.handle.row_factory = sqlite3.Row
         if not self.check_table():
             self.handle.execute(open("init.sql", "r").read())
         self.handle.commit()
@@ -28,5 +29,5 @@ class Database:
         tuples = cur.fetchall()
         output = []
         for t in tuples:
-            output.append(SignInData(t[1], t[2], t[3], t[4]))
+            output.append(SignInData(t["firstName"], t["lastName"], t["timestamp"], t["additionalNotes"]))
         return output
