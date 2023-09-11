@@ -6,24 +6,30 @@ import { SignIn, History } from "./signIn";
 function ServerStatus() {
 	const [status, setStatus] = useState("");
 	
-	const checkServer = () => {
-		fetch("http://127.0.0.1:5000/helloworld").then(() => {
+	const checkServer = async () => {
+		try {
+			const response = await fetch("http://localhost:5000/ping");
+			const data = await response.json();
+			console.log(data);
 			setStatus("Found");
-		}).catch(() => {
+		} catch (err) {
 			setStatus("Not Found");
-		});
+		}
 	}
 
 	useEffect(() => {
 		checkServer();
-	});
+
+		const id = setInterval(checkServer, 5000);
+
+		return () => {
+			clearInterval(id);
+		}
+	}, []);
 
 	return (
 		<div>
 			<p>Server status: {status}</p>
-			<button onClick={() => {
-				checkServer();
-			}}>Check Status</button>
 		</div>
 	)
 }
