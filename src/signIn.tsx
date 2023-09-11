@@ -1,5 +1,6 @@
 import "./signIn.css";
-import React from "react";
+
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SignInData } from "./types";
 import { addSignIn } from "./slice";
@@ -8,9 +9,9 @@ import { RootState } from "./reducers";
 export function SignIn() {
 	const dispatch = useDispatch();
 
-	const [firstName, setFirstName] = React.useState("");
-	const [lastName, setLastName] = React.useState("");
-	const [additionalInfo, setAdditionalInfo] = React.useState("");
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [additionalInfo, setAdditionalInfo] = useState("");
 
 	const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();

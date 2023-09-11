@@ -1,9 +1,10 @@
 import "./app.css";
-import React from "react";
+
+import { useState, useEffect } from "react";
 import { SignIn, History } from "./signIn";
 
 function ServerStatus() {
-	const [status, setStatus] = React.useState("");
+	const [status, setStatus] = useState("");
 	
 	const checkServer = () => {
 		fetch("http://127.0.0.1:5000/helloworld").then(() => {
@@ -13,7 +14,7 @@ function ServerStatus() {
 		});
 	}
 
-	React.useEffect(() => {
+	useEffect(() => {
 		checkServer();
 	});
 
