@@ -1,41 +1,41 @@
 .mainContainer {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .App {
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    padding: 15px;
-    margin: 10px 10px;
-    border-radius: 10px;
-    flex: 1;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  padding: 15px;
+  margin: 10px 10px;
+  border-radius: 10px;
+  flex: 1;
 }
 
 .App.head {
-    background-color: #aaaa;
+  background-color: #aaaa;
 }
 
 .App.logic {
-    background-color: #bbbb;
+  background-color: #bbbb;
 }
 
 .App.history {
-    background-color: #cccc;
+  background-color: #cccc;
 }
 
 .App.credits {
-    background-color: #dddd;
+  background-color: #dddd;
 }
 
-.App.credits > p {
-    margin: 2px 2px;
+.App.credits>p {
+  margin: 2px 2px;
 }
 
 .App.status {
-    background-color: #eeee;
+  background-color: #eeee;
 }
 
 .App.status button {
-    padding: 14px 25px;
-    margin: 8px 0px;
+  padding: 14px 25px;
+  margin: 8px 0px;
 }
