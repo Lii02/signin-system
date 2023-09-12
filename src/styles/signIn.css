@@ -29,6 +29,7 @@ input[type=text], .widebox {
 }
 
 ol {
+	list-style-type: none;
   padding: 10px 25%;
   margin: 10px 5px;
   border-radius: 5px;
