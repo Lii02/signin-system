@@ -47,14 +47,6 @@ export function App() {
 				<h1>Sign in History</h1>
 				<History />
 			</div>
-			<div className="App credits">
-				<h1>Credits</h1>
-				<p>Luke Inlow</p>
-				<h3>API's used</h3>
-				<p>ReactJS</p>
-				<p>React Redux</p>
-				<p>Flask</p>
-			</div>
 			<div className="App status">
 				<h1>Server Status</h1>
 				<ServerStatus />
