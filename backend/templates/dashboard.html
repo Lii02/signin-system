@@ -13,7 +13,7 @@
 	<div class="App list">
 		<ol>
 			{% for s in signins %}
-			<li>Name: {{ s.first_name }} {{ s.last_name }} Time: {{ s.get_time_string() }} Notes: {{ s.additional_notes }}
+			<li>{{ s.first_name }} {{ s.last_name }} {{ s.get_time_string() }} Notes: {{ s.additional_notes }}
 			</li>
 			{% endfor %}
 		</ol>

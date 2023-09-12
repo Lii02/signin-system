@@ -16,6 +16,10 @@ p, li {
 	font-family: Roboto, sans-serif;
 }
 
+ol {
+	list-style-type: none;
+}
+
 .App {
 	text-align: center;
 }
@@ -32,8 +36,4 @@ p, li {
 	margin: 10px 5px;
 	border-radius: 5px;
 	background-color: #535050aa;
-}
-
-.App.list ol li {
-	color: black;
 }
