@@ -3,6 +3,8 @@ import "./styles/app.css";
 import { useState, useEffect } from "react";
 import { SignIn, History } from "./signIn";
 import { backendAddress } from "./util/constants";
+import { VscServerEnvironment } from "react-icons/vsc"
+import { BiBook } from "react-icons/bi";
 
 function ServerStatus() {
 	const [status, setStatus] = useState("");
@@ -45,11 +47,11 @@ export function App() {
 				<SignIn />
 			</div>
 			<div className="App history">
-				<h1>Sign in History</h1>
+				<h1>Sign in History <BiBook /></h1>
 				<History />
 			</div>
 			<div className="App status">
-				<h1>Server Status</h1>
+				<h1>Server Status <VscServerEnvironment /></h1>
 				<ServerStatus />
 			</div>
 		</div>
