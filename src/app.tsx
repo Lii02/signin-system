@@ -47,11 +47,11 @@ export function App() {
 				<SignIn />
 			</div>
 			<div className="App history">
-				<h1>Sign in History <BiBook /></h1>
+				<h1>Sign in History {<BiBook />}</h1>
 				<History />
 			</div>
 			<div className="App status">
-				<h1>Server Status <VscServerEnvironment /></h1>
+				<h1>Server Status {<VscServerEnvironment />}</h1>
 				<ServerStatus />
 			</div>
 		</div>

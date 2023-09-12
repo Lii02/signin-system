@@ -82,7 +82,7 @@ export function History() {
 		return (
 			<ol>
 				{log.map((data, index) => (
-					<li key={index}>Name: {data.first} {data.last} | Timestamp: {new Date(data.timestamp).toLocaleString()}</li>
+					<li key={index}>{data.first} {data.last}, {new Date(data.timestamp).toLocaleString()}</li>
 				))}
 			</ol>
 		);
