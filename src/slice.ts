@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { SignInData } from './types';
+import { SignInData } from './util/types';
 
 const log: SignInData[] = [];
 

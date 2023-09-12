@@ -2,13 +2,14 @@ import "./styles/app.css";
 
 import { useState, useEffect } from "react";
 import { SignIn, History } from "./signIn";
+import { backendAddress } from "./util/constants";
 
 function ServerStatus() {
 	const [status, setStatus] = useState("");
 	
 	const checkServer = async () => {
 		try {
-			const response = await fetch("http://localhost:5000/ping");
+			const response = await fetch(`${backendAddress}/ping`);
 			const data = await response.json();
 			console.log(data);
 			setStatus("Found");

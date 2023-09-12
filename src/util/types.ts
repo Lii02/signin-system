@@ -1,4 +1,4 @@
-export type SignInData =  {
+export interface SignInData  {
   first: string;
   last: string;
   timestamp: number; // Posix timestamp
