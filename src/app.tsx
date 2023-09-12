@@ -1,28 +1,38 @@
-import "./app.css";
-import React from "react";
+import "./styles/app.css";
+
+import { useState, useEffect } from "react";
 import { SignIn, History } from "./signIn";
+import { backendAddress } from "./util/constants";
+import { VscServerEnvironment } from "react-icons/vsc"
+import { BiBook } from "react-icons/bi";
 
 function ServerStatus() {
-	const [status, setStatus] = React.useState("");
+	const [status, setStatus] = useState("");
 	
-	const checkServer = () => {
-		fetch("http://127.0.0.1:5000/helloworld").then(() => {
+	const checkServer = async () => {
+		try {
+			const response = await fetch(`${backendAddress}/ping`);
+			const data = await response.json();
+			console.log(data);
 			setStatus("Found");
-		}).catch(() => {
+		} catch (err) {
 			setStatus("Not Found");
-		});
+		}
 	}
 
-	React.useEffect(() => {
+	useEffect(() => {
 		checkServer();
-	});
+
+		const id = setInterval(checkServer, 5000);
+
+		return () => {
+			clearInterval(id);
+		}
+	}, []);
 
 	return (
 		<div>
 			<p>Server status: {status}</p>
-			<button onClick={() => {
-				checkServer();
-			}}>Check Status</button>
 		</div>
 	)
 }
@@ -37,19 +47,11 @@ export function App() {
 				<SignIn />
 			</div>
 			<div className="App history">
-				<h1>Sign in History</h1>
+				<h1>Sign in History {<BiBook />}</h1>
 				<History />
 			</div>
-			<div className="App credits">
-				<h1>Credits</h1>
-				<p>Luke Inlow</p>
-				<h3>API's used</h3>
-				<p>ReactJS</p>
-				<p>React Redux</p>
-				<p>Flask</p>
-			</div>
 			<div className="App status">
-				<h1>Server Status</h1>
+				<h1>Server Status {<VscServerEnvironment />}</h1>
 				<ServerStatus />
 			</div>
 		</div>

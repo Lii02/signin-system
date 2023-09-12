@@ -1,18 +1,20 @@
-import "./signIn.css";
-import React from "react";
+import "./styles/signIn.css";
+
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { SignInData } from "./types";
+import { SignInData } from "./util/types";
 import { addSignIn } from "./slice";
 import { RootState } from "./reducers";
+import { backendAddress } from "./util/constants";
 
 export function SignIn() {
 	const dispatch = useDispatch();
 
-	const [firstName, setFirstName] = React.useState("");
-	const [lastName, setLastName] = React.useState("");
-	const [additionalInfo, setAdditionalInfo] = React.useState("");
+	const [firstName, setFirstName] = useState("");
+	const [lastName, setLastName] = useState("");
+	const [additionalInfo, setAdditionalInfo] = useState("");
 
-	const onSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+	const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		if (!firstName || !lastName) {
 			alert("The first and/or last name box is empty!");
@@ -23,22 +25,30 @@ export function SignIn() {
 		const data: SignInData = {
 			first: firstName,
 			last: lastName,
-			timestamp: new Date().valueOf() / 1000,
+			timestamp: new Date().valueOf(),
 			additional: additionalInfo,
 		};
 
 		dispatch(addSignIn(data));
 
-		let req = new XMLHttpRequest();
-		req.open("POST", "http://localhost:5000/signin");
-		req.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
 		let jsonData = JSON.stringify({
 			"firstName": data.first,
 			"lastName": data.last,
 			"timestamp": data.timestamp,
 			"additionalNotes": data.additional
 		});
-		req.send(jsonData);
+
+		try {
+			let response = await fetch(`${backendAddress}/signin`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: jsonData
+			});
+		} catch(error) {
+			console.log(error);
+		}
 	};
 
 	return (
@@ -72,11 +82,11 @@ export function History() {
 	// Draw a list if the log has history
 	const HistoryList = () => {
 		if(!hasHistory)
-			return <div></div>;
+			return <></>;
 		return (
 			<ol>
 				{log.map((data, index) => (
-					<li key={index}>Name: {data.first} {data.last} | Timestamp: {new Date(data.timestamp * 1000).toLocaleString()}</li>
+					<li key={index}>{data.first} {data.last}, {new Date(data.timestamp).toLocaleString()}</li>
 				))}
 			</ol>
 		);

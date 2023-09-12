@@ -2,7 +2,7 @@ import { combineReducers } from 'redux';
 import signinReducer from './slice';
 
 const rootReducer = combineReducers({
-    log: signinReducer,
+  log: signinReducer,
 });
 
 export type RootState = ReturnType<typeof rootReducer>;

@@ -1,4 +1,5 @@
-import "./index.css";
+import "./styles/globals.css";
+
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./app";
@@ -8,9 +9,9 @@ import { Provider } from "react-redux";
 const root = ReactDOM.createRoot(document.getElementById("root") as HTMLElement);
 
 root.render(
-	<React.StrictMode>
+	<React.Fragment>
 		<Provider store={globalStore}>
 			<App />
 		</Provider>
-	</React.StrictMode>
+	</React.Fragment>
 );
