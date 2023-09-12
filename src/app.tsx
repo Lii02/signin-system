@@ -1,4 +1,4 @@
-import "./app.css";
+import "./styles/app.css";
 
 import { useState, useEffect } from "react";
 import { SignIn, History } from "./signIn";
