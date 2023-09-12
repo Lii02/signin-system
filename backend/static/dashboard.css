@@ -4,7 +4,8 @@
 body {
 	display: flex;
 	flex-direction: column;
-	background-color: rgb(149, 153, 153);
+	background-color: rgb(44, 44, 44);
+	color: white;
 }
 
 h1, h2, h3 {
@@ -20,19 +21,17 @@ p, li {
 }
 
 .App.head {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 	padding: 10px 25%;
 	margin: 10px 5px;
 	border-radius: 5px;
-	background-color: #5a4d68aa;
+	background-color: #535050aa;
 }
 
 .App.list ol {
-	box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 	padding: 10px 25%;
 	margin: 10px 5px;
 	border-radius: 5px;
-	background-color: #4e4558aa;
+	background-color: #535050aa;
 }
 
 .App.list ol li {
