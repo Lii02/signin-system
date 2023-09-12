@@ -2,15 +2,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
 body {
-  background-color: darkgray;
-  color: #111;
-  text-align: center;
+  background-color: rgb(46, 44, 44);
+  color: #ffffff;
 }
 
 h1, h2, h3 {
   font-family: Open-Sans, sans-serif;
 }
 
-p, li {
+p, li, label {
 	font-family: Roboto, sans-serif;
+}
+
+button {
+  padding: 14px 25px;
 }
