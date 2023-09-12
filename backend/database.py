@@ -1,5 +1,5 @@
 import sqlite3
-from data import SignInData
+from dbtypes import SignInData
 
 DB_NAME = "signin.db"
 

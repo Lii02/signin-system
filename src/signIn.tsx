@@ -38,13 +38,17 @@ export function SignIn() {
 			"additionalNotes": data.additional
 		});
 
-		await fetch(`${backendAddress}/signIn`, {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json"
-			},
-			body: jsonData
-		});
+		try {
+			let response = await fetch(`${backendAddress}/signin`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json"
+				},
+				body: jsonData
+			});
+		} catch(error) {
+			console.log(error);
+		}
 	};
 
 	return (
